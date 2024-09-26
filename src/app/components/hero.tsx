@@ -71,7 +71,6 @@ export default function Hero() {
           </a>
           <a
             className={"mx-10 hover:cursor-pointer"}
-            // href="mailto:AlexCabreraD22@gmail.com"
             onClick={() => {
               setOpenSnackbar(true);
             }}

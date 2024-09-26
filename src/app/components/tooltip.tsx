@@ -9,18 +9,17 @@ interface TooltipProps {
 export function Tooltip({ text, position = "top", children }: TooltipProps) {
   const [hovered, setHovered] = useState(false);
 
-  // Conditional classes for different positions
   const getTooltipPosition = () => {
     switch (position) {
       case "bottom":
-        return "left-1/2 -translate-x-1/2 top-full mt-2"; // Tooltip below
+        return "left-1/2 -translate-x-1/2 top-full mt-2";
       case "end":
-        return "left-full ml-2 top-1/2 -translate-y-1/2"; // Tooltip on the right (end)
+        return "left-full ml-2 top-1/2 -translate-y-1/2";
       case "start":
-        return "right-full mr-2 top-1/2 -translate-y-1/2"; // Tooltip on the left (start)
+        return "right-full mr-2 top-1/2 -translate-y-1/2";
       case "top":
       default:
-        return "left-1/2 -translate-x-1/2 bottom-full mb-2"; // Tooltip above (default)
+        return "left-1/2 -translate-x-1/2 bottom-full mb-2";
     }
   };
 
