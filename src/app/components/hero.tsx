@@ -34,11 +34,11 @@ export default function Hero() {
       </p>
       <TypeAnimation
         sequence={[
-          "Front-end", // Types 'One'
-          1000, // Waits 1s
-          "Back-end", // Deletes 'One' and types 'Two'
-          1000, // Waits 2s
-          "Full Stack Web Developer", // Types 'Three' without deleting 'Two'
+          "Front-end",
+          1000,
+          "Back-end",
+          1000,
+          "Full Stack Web Developer",
         ]}
         wrapper="span"
         cursor={true}

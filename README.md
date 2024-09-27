@@ -1,36 +1,20 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 💻 Full Stack Web Developer Portfolio
 
-## Getting Started
+Welcome to my personal portfolio! This repository showcases my skills, projects, and the technologies I work with as a full stack web developer. I specialize in building scalable, efficient web applications with a focus on user experience and performance.
 
-First, run the development server:
+## 🌐 Live Demo
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+You can explore the live version of my portfolio here: [Your Portfolio Website](https://yourwebsite.com)
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## 🛠️ Technologies and Tools
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+As a full stack developer, I work with a diverse set of tools and technologies across both frontend and backend development. Here are some of the key technologies I use:
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+### Frontend
+- **React** (with Hooks and Context API)
+- **Next.js** (for Server-Side Rendering and Static Site Generation)
+- **TypeScript**
+- **HTML5/CSS3/SCSS**
+- **JavaScript (ES6+)**
+- **Tailwind CSS** / **Material-UI**
+- **Redux Toolkit**
