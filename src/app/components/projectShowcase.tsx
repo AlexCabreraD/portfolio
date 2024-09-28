@@ -3,7 +3,7 @@ import { BsCircleFill } from "react-icons/bs";
 import { LuExternalLink } from "react-icons/lu";
 import { FaGithub } from "react-icons/fa";
 import projectImage from "../assets/jspro.jpg";
-import previewProjectImage from "@/app/assets/jsproLanding.png"; // Image import
+import previewProjectImage from "@/app/assets/jsproLanding.png";
 
 import Image from "next/image";
 import ModalComponent from "@/app/components/ModalComponent";
