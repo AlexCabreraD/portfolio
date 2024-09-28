@@ -7,6 +7,7 @@ import MyTools from "@/app/components/myTools";
 import ProjectShowcase from "@/app/components/projectShowcase";
 import LoadingScreen from "@/app/components/loadingScreen";
 import Contact from "@/app/components/contact";
+import Footer from "@/app/components/footer";
 
 export default function Home() {
   return (
@@ -18,6 +19,7 @@ export default function Home() {
           <MyTools />
           <ProjectShowcase />
           <Contact />
+          <Footer />
         </div>
         <AnimatedBackground />
       </LoadingScreen>

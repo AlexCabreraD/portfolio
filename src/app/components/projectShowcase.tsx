@@ -25,7 +25,7 @@ const ProjectShowcase = () => {
         My Work
         <div className="border-t border-gray-300 w-1/4"></div>
       </h2>
-      <div className="bg-[#181818] w-full max-w-5xl rounded-xl shadow-lg">
+      <div className="bg-[#181818] w-full max-w-5xl rounded-xl shadow-lg border">
         <div className=" bg-[#181818] flex items-center px-4 py-2 rounded-t-xl">
           <div className="flex space-x-2">
             <BsCircleFill className="text-red-500" size={10} />

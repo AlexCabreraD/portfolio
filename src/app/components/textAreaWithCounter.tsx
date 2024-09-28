@@ -19,7 +19,7 @@ const TextAreaWithCounter: React.FC<TextAreaWithCounterProps> = ({
         value={value}
         onChange={onChange}
         className={
-          "bg-[#181818] h-[132px] rounded-[5px] pt-2.5 text-top p-[16px] resize-none w-full pr-[60px] " +
+          "bg-[#181818] h-[132px] rounded-[5px] pt-2.5 text-top p-[16px] resize-none w-full pr-[60px] border " +
           className
         }
         maxLength={250}

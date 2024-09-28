@@ -191,7 +191,7 @@ export default function Contact() {
               required
               value={email}
               onChange={handleEmailChange} // Set email state
-              className={`bg-[#181818] h-[32px] rounded-[5px] p-[16px] ${
+              className={`bg-[#181818] h-[32px] rounded-[5px] p-[16px] border ${
                 isEmailError ? "border border-red-500" : ""
               }`}
               maxLength={254}
