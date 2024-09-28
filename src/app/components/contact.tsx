@@ -41,6 +41,8 @@ export default function Contact() {
 
     if (!email) {
       setIsEmailError(true);
+      setSnackbarStatus("error");
+      setSnackbarMessage("Please enter a valid email.");
       hasError = true;
     } else if (!isValidEmail(email)) {
       setIsEmailError(true);
@@ -89,8 +91,9 @@ export default function Contact() {
 
   const onCopyEmailClick = () => {
     navigator.clipboard
-      .writeText("myEmail")
+      .writeText("AlexCabreraD22@gmail.com")
       .then(() => {
+        setSnackbarStatus("success");
         setSnackbarMessage("Email copied to clipboard!");
         setOpenSnackbar(true);
       })
@@ -153,7 +156,7 @@ export default function Contact() {
                 >
                   <MdMail className="w-10 h-10 sm:w-12 sm:h-12 mr-[16px]" />
                   <p className={"content-center text-body md:text-body-lg"}>
-                    myEmail
+                    AlexCabreraD22@gmail.com
                   </p>
                 </a>
               </Tooltip>
@@ -170,7 +173,7 @@ export default function Contact() {
                 >
                   <FaLinkedin className="w-10 h-10 sm:w-12 sm:h-12 mr-[16px]" />
                   <p className={"content-center text-body md:text-body-lg"}>
-                    my name
+                    Cabrera-Alejandro
                   </p>
                 </a>
               </Tooltip>
