@@ -7,6 +7,7 @@ import MyTools from "@/app/components/myTools";
 import ProjectShowcase from "@/app/components/projectShowcase";
 import LoadingScreen from "@/app/components/loadingScreen";
 import Contact from "@/app/components/contact";
+import ModalComponent from "@/app/components/ModalComponent";
 
 export default function Home() {
   return (

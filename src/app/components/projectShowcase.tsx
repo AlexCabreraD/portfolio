@@ -3,11 +3,24 @@ import { BsCircleFill } from "react-icons/bs";
 import { LuExternalLink } from "react-icons/lu";
 import { FaGithub } from "react-icons/fa";
 import projectImage from "../assets/jspro.jpg";
+import previewProjectImage from "@/app/assets/jsproLanding.png"; // Image import
+
 import Image from "next/image";
+import ModalComponent from "@/app/components/ModalComponent";
+import { useState } from "react";
 
 const ProjectShowcase = () => {
+  const [showProjectPreview, setShowProjectPreview] = useState<boolean>(false);
   return (
     <div className="text-start text-white py-10 flex flex-col overlay-content">
+      {showProjectPreview && (
+        <ModalComponent
+          onClose={() => setShowProjectPreview(false)}
+          headerTitle={"JsProFinish-utah.com"}
+          liveSiteUrl={"https://www.jsprofinish-utah.com/"}
+          imageUrl={previewProjectImage.src}
+        ></ModalComponent>
+      )}
       <h2 className="mb-6 text-body-sm md:text-body">
         My Work
         <div className="border-t border-gray-300 w-1/4"></div>
@@ -17,7 +30,14 @@ const ProjectShowcase = () => {
           <div className="flex space-x-2">
             <BsCircleFill className="text-red-500" size={10} />
             <BsCircleFill className="text-yellow-500" size={10} />
-            <BsCircleFill className="text-green-500" size={10} />
+            <button
+              onClick={() => {
+                setShowProjectPreview(true);
+              }}
+              className={"hover:cursor-pointer z-10"}
+            >
+              <BsCircleFill className="text-green-500" size={10} />
+            </button>
           </div>
           <div
             className={
@@ -35,7 +55,12 @@ const ProjectShowcase = () => {
           </div>
         </div>
 
-        <div className="px-2 pb-2 flex justify-center ">
+        <div
+          className="px-2 pb-2 flex justify-center cursor-pointer"
+          onClick={() => {
+            setShowProjectPreview(true);
+          }}
+        >
           <Image
             src={projectImage.src}
             alt="Website Screenshot"
