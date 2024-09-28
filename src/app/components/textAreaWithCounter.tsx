@@ -1,23 +1,31 @@
-import React, { useState, ChangeEvent } from "react";
+import React, { ChangeEvent } from "react";
 
-const TextAreaWithCounter: React.FC = () => {
-  const [message, setMessage] = useState<string>("");
+interface TextAreaWithCounterProps {
+  value: string;
+  onChange: (event: ChangeEvent<HTMLTextAreaElement>) => void;
+  className: string;
+}
 
-  const handleChange = (event: ChangeEvent<HTMLTextAreaElement>) => {
-    setMessage(event.target.value);
-  };
-
+const TextAreaWithCounter: React.FC<TextAreaWithCounterProps> = ({
+  value,
+  onChange,
+  className,
+}) => {
   return (
-    <div className="relative w-full">
+    <div className={"relative w-full"}>
       <textarea
         placeholder="Message*"
-        value={message}
-        onChange={handleChange}
-        className="bg-[#181818] h-[132px] rounded-[5px] pt-2.5 text-top p-[16px] resize-none w-full pr-[60px]"
+        required
+        value={value}
+        onChange={onChange}
+        className={
+          "bg-[#181818] h-[132px] rounded-[5px] pt-2.5 text-top p-[16px] resize-none w-full pr-[60px] " +
+          className
+        }
         maxLength={250}
       />
       <span className="absolute right-4 bottom-3 text-gray-400">
-        {message.length}/250
+        {value.length}/250
       </span>
     </div>
   );
