@@ -13,7 +13,7 @@ export function Snackbar({ visible, text, onClose, onOpen }: SnackbarProps) {
       onOpen();
       const timer = setTimeout(() => {
         onClose();
-      }, 3000); // Hide snackbar after 3 seconds
+      }, 3000);
 
       return () => clearTimeout(timer);
     }

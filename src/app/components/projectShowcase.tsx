@@ -1,7 +1,9 @@
 import { FaLock } from "react-icons/fa";
 import { BsCircleFill } from "react-icons/bs";
+import { LuExternalLink } from "react-icons/lu";
+import { FaGithub } from "react-icons/fa";
 import projectImage from "../assets/jspro.jpg";
-import Image from "next/image"; // Update the path to your screenshot
+import Image from "next/image";
 
 const ProjectShowcase = () => {
   return (
@@ -23,11 +25,17 @@ const ProjectShowcase = () => {
             }
           >
             <FaLock className=" mr-3" />
-            <div>JsProFinish-utah.com</div>
+            <a
+              href={"https://www.jsprofinish-utah.com/"}
+              target={"_blank"}
+              className={"hover:drop-shadow-glow"}
+            >
+              JsProFinish-utah.com
+            </a>
           </div>
         </div>
 
-        <div className="px-2 pb-2 flex justify-center">
+        <div className="px-2 pb-2 flex justify-center ">
           <Image
             src={projectImage.src}
             alt="Website Screenshot"
@@ -40,9 +48,26 @@ const ProjectShowcase = () => {
       </div>
       <div>
         <div className="mt-[16px] rounded-b-xl">
-          <p className="text-body-sm md:text-body">
-            JSProFinish – Basement Finishing Solutions
-          </p>
+          <div className={"flex flex-row justify-between"}>
+            <p className="text-body-sm md:text-body">
+              JSProFinish – Basement Finishing Solutions
+            </p>
+            <div className={"flex flex-row space-x-3"}>
+              <a
+                href={"https://github.com/AlexCabreraD/portfolio"}
+                target={"_blank"}
+              >
+                <FaGithub size={20} className={"hover:drop-shadow-glow"} />
+              </a>
+              <a href={"https://www.jsprofinish-utah.com/"} target={"_blank"}>
+                <LuExternalLink
+                  size={20}
+                  className={"hover:drop-shadow-glow"}
+                />
+              </a>
+            </div>
+          </div>
+
           <p className="text-[#4D4D4D] mt-[8px] text-body-sm md:text-body">
             A professional website for a basement finishing company in Utah,
             showcasing services, project galleries, and client testimonials.

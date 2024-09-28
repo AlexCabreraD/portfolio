@@ -7,7 +7,6 @@ export function AnimatedBackground() {
     const canvas = canvasRef.current;
     const ctx = canvas!.getContext("2d");
 
-    // Function to resize canvas and reset drawing
     const resizeCanvas = () => {
       const width = (canvas!.width = window.innerWidth);
       const height = (canvas!.height = window.innerHeight);
@@ -57,7 +56,6 @@ export function AnimatedBackground() {
       animate();
     };
 
-    // Resize the canvas when the window is resized
     resizeCanvas();
     window.addEventListener("resize", resizeCanvas);
 

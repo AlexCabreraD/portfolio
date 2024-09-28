@@ -32,16 +32,17 @@ const MyTools = () => {
               </div>
               <div className="flex flex-row justify-start space-x-8 ml-[32px]">
                 <div className="flex items-center space-x-2">
-                  <FaReact size={25} />
-                  <span>React</span>
+                  <SiTypescript size={25} />
+                  <span>TypeScript</span>
                 </div>
                 <div className="flex items-center space-x-2">
                   <SiNextdotjs size={25} />
                   <span>Next.js</span>
                 </div>
                 <div className="flex items-center space-x-2">
-                  <SiTypescript size={25} />
-                  <span>TypeScript</span>
+                  <FaReact size={25} />
+
+                  <span>React</span>
                 </div>
               </div>
             </div>
