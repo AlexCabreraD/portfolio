@@ -33,7 +33,7 @@ export function Tooltip({ text, position = "top", children }: TooltipProps) {
 
       {hovered && (
         <div
-          className={`absolute z-10 w-max px-2 py-1 bg-black text-white text-sm rounded shadow-lg opacity-90 pointer-events-none ${getTooltipPosition()}`}
+          className={`absolute z-10 w-max px-2 py-1 bg-[#181818] text-white text-sm rounded shadow-lg opacity-90 pointer-events-none ${getTooltipPosition()}`}
         >
           {text}
         </div>
