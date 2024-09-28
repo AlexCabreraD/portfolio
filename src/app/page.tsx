@@ -8,8 +8,12 @@ import ProjectShowcase from "@/app/components/projectShowcase";
 import LoadingScreen from "@/app/components/loadingScreen";
 import Contact from "@/app/components/contact";
 import Footer from "@/app/components/footer";
+import { useEffect } from "react";
 
 export default function Home() {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
   return (
     <div className="text-center h-full">
       <LoadingScreen>
