@@ -67,9 +67,7 @@ const ModalComponent: React.FC<ModalProps> = ({
           </div>
         </div>
         <button
-          className={
-            "bg-[#181818] py-[8px] px-[20px] text-end w-full lg:hidden"
-          }
+          className={"bg-[#181818] py-[8px] w-full lg:hidden"}
           onClick={() => {
             onClose();
           }}
