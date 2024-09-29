@@ -12,7 +12,10 @@ import { useState } from "react";
 const ProjectShowcase = () => {
   const [showProjectPreview, setShowProjectPreview] = useState<boolean>(false);
   return (
-    <div className="text-start text-white py-10 flex flex-col overlay-content">
+    <div
+      className="text-start text-white py-10 flex flex-col overlay-content"
+      id={"projects"}
+    >
       {showProjectPreview && (
         <ModalComponent
           onClose={() => setShowProjectPreview(false)}

@@ -13,7 +13,7 @@ import {
 
 const MyTools = () => {
   return (
-    <div className="py-10">
+    <div className="py-10" id={"tools"}>
       <div className="container mx-auto text-start">
         <h2 className="mb-6 text-body-sm md:text-body">
           My Tools

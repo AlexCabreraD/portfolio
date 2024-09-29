@@ -1,6 +1,7 @@
 import React from "react";
 import { FaLinkedin, FaGithub } from "react-icons/fa";
 import { MdMail } from "react-icons/md";
+import { scrollToSection } from "@/app/utils";
 
 const Footer = () => {
   return (
@@ -11,18 +12,38 @@ const Footer = () => {
           "flex flex-row justify-between mt-[32px] md:space-x-[16px] md:justify-start "
         }
       >
-        <a>
+        <button
+          className={"hover:drop-shadow-glow"}
+          onClick={() => {
+            scrollToSection("about");
+          }}
+        >
           <p>About</p>
-        </a>
-        <a>
+        </button>
+        <button
+          className={"hover:drop-shadow-glow"}
+          onClick={() => {
+            scrollToSection("tools");
+          }}
+        >
           <p>Skills</p>
-        </a>
-        <a>
+        </button>
+        <button
+          className={"hover:drop-shadow-glow"}
+          onClick={() => {
+            scrollToSection("projects");
+          }}
+        >
           <p>Projects</p>
-        </a>
-        <a>
+        </button>
+        <button
+          className={"hover:drop-shadow-glow"}
+          onClick={() => {
+            scrollToSection("contact");
+          }}
+        >
           <p>Contact</p>
-        </a>
+        </button>
       </div>
       <div className="container mx-auto flex flex-col md:flex-row justify-between items-center">
         <div className="mb-[32px]">
