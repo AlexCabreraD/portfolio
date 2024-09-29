@@ -1,11 +1,39 @@
-import React from "react";
+import React, { useState } from "react";
 import { FaLinkedin, FaGithub } from "react-icons/fa";
 import { MdMail } from "react-icons/md";
 import { scrollToSection } from "@/app/utils";
+import { Snackbar } from "@/app/components/snackbar";
 
 const Footer = () => {
+  const [openSnackbar, setOpenSnackbar] = useState<boolean>(false);
+  const [snackbarMessage, setSnackbarMessage] = useState<string | null>(null);
+  const [snackbarStatus, setSnackbarStatus] = useState<
+    "success" | "info" | "warning" | "error" | null
+  >(null);
+
+  const onCopyEmailClick = () => {
+    navigator.clipboard
+      .writeText("AlexCabreraD22@gmail.com")
+      .then(() => {
+        setSnackbarStatus("success");
+        setSnackbarMessage("Email copied to clipboard!");
+        setOpenSnackbar(true);
+      })
+      .catch((err) => console.error("Failed to copy: ", err));
+  };
+
   return (
     <footer className="text-white py-4">
+      <Snackbar
+        visible={openSnackbar}
+        text={snackbarMessage ?? ""}
+        status={snackbarStatus}
+        onOpen={() => {}}
+        onClose={() => {
+          setOpenSnackbar(false);
+          setSnackbarMessage(null);
+        }}
+      />
       <div className="flex-grow border-t border-t-1 border-gray-300"></div>
       <div
         className={
@@ -64,9 +92,14 @@ const Footer = () => {
             >
               <FaGithub className="w-6 h-6 hover:text-gray-400" />
             </a>
-            <a className={"hover:drop-shadow-glow"}>
+            <button
+              onClick={() => {
+                onCopyEmailClick();
+              }}
+              className={"hover:drop-shadow-glow"}
+            >
               <MdMail className="w-6 h-6 hover:text-orange-300" />
-            </a>
+            </button>
           </div>
         </div>
         <div>
