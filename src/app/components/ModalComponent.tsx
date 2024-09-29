@@ -19,11 +19,11 @@ const ModalComponent: React.FC<ModalProps> = ({
   return (
     <div
       className="fixed inset-0 flex justify-center items-center bg-black bg-opacity-80 z-50"
-      onClick={onClose} // Close the modal when clicking outside
+      onClick={onClose}
     >
       <div
         className="bg-[#181818] w-full max-w-5xl rounded-xl shadow-lg overflow-hidden"
-        onClick={(e) => e.stopPropagation()} // Prevent closing when clicking inside the modal
+        onClick={(e) => e.stopPropagation()}
       >
         <div className="bg-[#181818] flex items-center px-4 py-2 sticky top-0">
           <div className="flex space-x-2">
@@ -54,7 +54,7 @@ const ModalComponent: React.FC<ModalProps> = ({
           </div>
         </div>
 
-        <div className="h-[90vh] overflow-auto">
+        <div className="h-[70vh] md:h-[90vh] overflow-auto">
           <div className="flex justify-center w-full">
             <Image
               src={imageUrl}
