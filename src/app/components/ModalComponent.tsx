@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { BsCircleFill } from "react-icons/bs";
 import { FaLock } from "react-icons/fa";
 import Image from "next/image";
@@ -16,6 +16,12 @@ const ModalComponent: React.FC<ModalProps> = ({
   liveSiteUrl,
   headerTitle,
 }) => {
+  useEffect(() => {
+    document.body.style.overflow = "hidden";
+    return () => {
+      document.body.style.overflow = "";
+    };
+  }, []);
   return (
     <div
       className="fixed inset-0 flex justify-center items-center bg-black bg-opacity-80 z-50"
