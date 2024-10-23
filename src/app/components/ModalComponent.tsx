@@ -8,6 +8,7 @@ interface ModalProps {
   onClose: () => void; // Function to close the modal
   liveSiteUrl?: string; // URL to open the live site
   headerTitle: string;
+  liveUrl: string;
 }
 
 const ModalComponent: React.FC<ModalProps> = ({
@@ -15,6 +16,7 @@ const ModalComponent: React.FC<ModalProps> = ({
   onClose,
   liveSiteUrl,
   headerTitle,
+  liveUrl,
 }) => {
   // Disable scroll when modal is open and re-enable when closed
   useEffect(() => {
@@ -51,7 +53,7 @@ const ModalComponent: React.FC<ModalProps> = ({
           <div className="flex flex-1 w-full items-center justify-center ml-[-66px]">
             <FaLock className="mr-3" />
             <a
-              href={"https://www.jsprofinish-utah.com/"}
+              href={liveUrl}
               target={"_blank"}
               rel="noopener noreferrer"
               className="hover:drop-shadow-glow"

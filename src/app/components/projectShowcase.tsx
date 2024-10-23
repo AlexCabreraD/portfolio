@@ -4,7 +4,8 @@ import { LuExternalLink } from "react-icons/lu";
 import { FaGithub } from "react-icons/fa";
 import jsproPreview from "../assets/jspro.jpg";
 import retrospectivePreview from "../assets/retrospective.jpg";
-import previewProjectImage from "@/app/assets/jsproLanding.png";
+import jsProPreviewProjectImage from "@/app/assets/jsproLanding.png";
+import restrospectivePreviewProjectImage from "@/app/assets/retrospectiveFullPreview.jpg";
 
 import Image from "next/image";
 import ModalComponent from "@/app/components/ModalComponent";
@@ -22,8 +23,12 @@ interface projectTileProps {
   name: string;
   description: string[];
   url: string;
-  additionalInfo: AdditionalInfo[]; // Add this line
+  additionalInfo: AdditionalInfo[];
   imgPath: string;
+  setModalPreviewUrl: Dispatch<SetStateAction<string>>;
+  modalPreviewImgPath: string;
+  setModalPreviewTitle: Dispatch<SetStateAction<string>>;
+  setModalPreviewLiveUrl: Dispatch<SetStateAction<string>>;
 }
 
 const ProjectTile = ({
@@ -35,13 +40,16 @@ const ProjectTile = ({
   url,
   additionalInfo,
   imgPath,
+  setModalPreviewUrl,
+  modalPreviewImgPath,
+  setModalPreviewTitle,
+  setModalPreviewLiveUrl,
 }: projectTileProps) => {
   const [showMore, setShowMore] = useState<boolean>(false);
 
   return (
     <>
       <div className="bg-[#181818] w-full max-w-5xl rounded-xl shadow-lg border mt-6">
-        {/* Header and Image Section */}
         <div className="bg-[#181818] flex items-center px-4 py-2 rounded-t-xl">
           <div className="flex space-x-2">
             <BsCircleFill className="text-red-500" size={10} />
@@ -74,7 +82,12 @@ const ProjectTile = ({
 
         <div
           className="px-2 pb-2 flex justify-center cursor-pointer"
-          onClick={() => setShowProjectPreview(true)}
+          onClick={() => {
+            setModalPreviewUrl(modalPreviewImgPath);
+            setModalPreviewTitle(title);
+            setModalPreviewLiveUrl(url);
+            setShowProjectPreview(true);
+          }}
         >
           <Image
             src={imgPath}
@@ -126,7 +139,6 @@ const ProjectTile = ({
           </button>
         )}
 
-        {/* Render additional info section */}
         <ul className="text-[#4D4D4D] mt-[16px] text-body-sm md:text-body">
           {additionalInfo.map((info, index) => (
             <li key={index} className="mt-[16px]">
@@ -140,9 +152,13 @@ const ProjectTile = ({
   );
 };
 
+//TODO: ADD DYNAMIC ModalComponent IMG
 const ProjectShowcase = () => {
   const [showProjectPreview, setShowProjectPreview] = useState<boolean>(false);
   const [previewUrl, setPreviewUrl] = useState<string>("");
+  const [modalPreviewUrl, setModalPreviewUrl] = useState<string>("");
+  const [modalPreviewLiveUrl, setModalPreviewLiveUrl] = useState<string>("");
+  const [modalPreviewTitle, setModalPreviewTitle] = useState<string>("");
   return (
     <div
       className="text-start text-white py-10 flex flex-col overlay-content"
@@ -151,9 +167,10 @@ const ProjectShowcase = () => {
       {showProjectPreview && (
         <ModalComponent
           onClose={() => setShowProjectPreview(false)}
-          headerTitle={"JsProFinish-utah.com"}
+          headerTitle={modalPreviewTitle}
           liveSiteUrl={previewUrl}
-          imageUrl={previewProjectImage.src}
+          imageUrl={modalPreviewUrl}
+          liveUrl={modalPreviewLiveUrl}
         ></ModalComponent>
       )}
       <h2 className="mb-6 text-body-sm md:text-body">
@@ -179,6 +196,10 @@ const ProjectShowcase = () => {
             { label: "Design", items: ["Figma"] },
           ]}
           imgPath={retrospectivePreview.src}
+          setModalPreviewUrl={setModalPreviewUrl}
+          modalPreviewImgPath={restrospectivePreviewProjectImage.src}
+          setModalPreviewTitle={setModalPreviewTitle}
+          setModalPreviewLiveUrl={setModalPreviewLiveUrl}
         />
         <ProjectTile
           setShowProjectPreview={setShowProjectPreview}
@@ -209,6 +230,10 @@ const ProjectShowcase = () => {
             },
           ]}
           imgPath={jsproPreview.src}
+          setModalPreviewUrl={setModalPreviewUrl}
+          modalPreviewImgPath={jsProPreviewProjectImage.src}
+          setModalPreviewTitle={setModalPreviewTitle}
+          setModalPreviewLiveUrl={setModalPreviewLiveUrl}
         />
       </h2>
     </div>
