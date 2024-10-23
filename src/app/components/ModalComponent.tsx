@@ -90,7 +90,6 @@ const ModalComponent: React.FC<ModalProps> = ({
               height={1080}
               onLoadingComplete={() => setIsImageLoading(false)}
               priority
-              placeholder="blur"
             />
           </div>
         </div>
