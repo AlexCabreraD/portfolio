@@ -29,6 +29,7 @@ interface projectTileProps {
   modalPreviewImgPath: string;
   setModalPreviewTitle: Dispatch<SetStateAction<string>>;
   setModalPreviewLiveUrl: Dispatch<SetStateAction<string>>;
+  githubUrl: string;
 }
 
 const ProjectTile = ({
@@ -44,6 +45,7 @@ const ProjectTile = ({
   modalPreviewImgPath,
   setModalPreviewTitle,
   setModalPreviewLiveUrl,
+  githubUrl,
 }: projectTileProps) => {
   const [showMore, setShowMore] = useState<boolean>(false);
 
@@ -104,10 +106,7 @@ const ProjectTile = ({
         <div className={"flex flex-row justify-between"}>
           <p className="text-body-sm md:text-body">{name}</p>
           <div className={"flex flex-row space-x-3"}>
-            <a
-              href={"https://github.com/AlexCabreraD/portfolio"}
-              target={"_blank"}
-            >
+            <a href={githubUrl} target={"_blank"}>
               <FaGithub size={20} className={"hover:drop-shadow-glow"} />
             </a>
             <a href={url} target={"_blank"}>
@@ -152,7 +151,6 @@ const ProjectTile = ({
   );
 };
 
-//TODO: ADD DYNAMIC ModalComponent IMG
 const ProjectShowcase = () => {
   const [showProjectPreview, setShowProjectPreview] = useState<boolean>(false);
   const [previewUrl, setPreviewUrl] = useState<string>("");
@@ -200,6 +198,7 @@ const ProjectShowcase = () => {
           modalPreviewImgPath={restrospectivePreviewProjectImage.src}
           setModalPreviewTitle={setModalPreviewTitle}
           setModalPreviewLiveUrl={setModalPreviewLiveUrl}
+          githubUrl={"https://github.com/AlexCabreraD/retrospective-ui"}
         />
         <ProjectTile
           setShowProjectPreview={setShowProjectPreview}
@@ -234,6 +233,7 @@ const ProjectShowcase = () => {
           modalPreviewImgPath={jsProPreviewProjectImage.src}
           setModalPreviewTitle={setModalPreviewTitle}
           setModalPreviewLiveUrl={setModalPreviewLiveUrl}
+          githubUrl={"https://github.com/AlexCabreraD/JSProfinish"}
         />
       </h2>
     </div>
